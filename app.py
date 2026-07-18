@@ -7,13 +7,14 @@ TOKEN = "bot508914:1a90f8a2-e801-4e64-abdf-9fad6e5922d6"
 CHANNEL_ID = 11209050
 
 def send_message(text_to_send):
-    # استفاده از آدرس رسمی با پورت امن برای سرورهای خارجی
-    WORKER_URL = 'https://hidden-lab-f2aa.amir-iramin-ir25.workers.dev'
-    url = f"{WORKER-URL}/api/{TOKEN}/sendMessage"
+    # تعریف متغیر با آندراسکور _
+    WORKER_URL = "https://hidden-lab-f2aa.amir-iramin-ir25.workers.dev" 
+    
+    # استفاده دقیق از همان متغیر با حروف کوچک در ساختار f-string
+    url = f"{WORKER_URL}/api/{TOKEN}/sendMessage"
     data_packet = {'chat_id': CHANNEL_ID, 'text': text_to_send}
-    response = requests.post(url, data=data_packet, timeout=15) # اضافه کردن تایم‌اوت برای جلوگیری از قفل شدن
+    response = requests.post(url, data=data_packet, timeout=15)
     return response.json()
-
 # --- تنظیمات صفحه ---
 st.set_page_config(page_title="پنل مدیریت پیشرفته قیمت‌ها", page_icon="🥩", layout="centered")
 
