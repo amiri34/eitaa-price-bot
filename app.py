@@ -7,11 +7,9 @@ TOKEN = "bot508914:1a90f8a2-e801-4e64-abdf-9fad6e5922d6"
 CHANNEL_ID = 11209050
 
 def send_message(text_to_send):
-    url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
-    data_packet = {
-        'chat_id': CHANNEL_ID,
-        'text': text_to_send
-    }
+    # به جای eitaayar.ir اصلی، از پروکسی eitaayar.com استفاده می‌کنیم
+    url = f"https://eitaayar.com/api/{TOKEN}/sendMessage"
+    data_packet = {'chat_id': CHANNEL_ID, 'text': text_to_send}
     response = requests.post(url, data=data_packet)
     return response.json()
 
